@@ -2,26 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
 
-## Development server
+# Business overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+It has two main features :
+- Displaying a list of products in the /products page with the possibility of adding products to the card using the Add to Cart button
+- A cart page /cart where users can adjust quantities of products and remove them from the cart. The total price of products in the cart is automatically calculated after any adjustement.
 
-## Code scaffolding
+Design tweaks : 
+-A Tostr is shown after adding a product to the cart
+-The number of products in the cart is shown in the navbar
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Technical overview
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+-The state of the cart is manager by RxJs in a service provided in root, it is preferred to use tools for state management like Redux.
+-Page links are configured using RouterModule with Lazy Modules.
