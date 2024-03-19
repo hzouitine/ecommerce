@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductsComponent } from './products.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const routes: Routes = [{
@@ -12,11 +13,12 @@ const routes: Routes = [{
 @NgModule({
   declarations: [
     ProductsComponent,
-    ProductCardComponent
+    ProductCardComponent,
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    NgbToastModule
   ],
   exports:[ RouterModule ]
 })
