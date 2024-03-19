@@ -1,6 +1,8 @@
 <nav class="navbar shadow-sm" style="background-color: #e3f2fd;">
     <div class="container-fluid">
       <a class="navbar-brand">Ecommerce Kata</a>
-      <button class="fs-4 btn btn-link"><i class="bi bi-cart"></i></button>
+      <button class="fs-4 btn btn-link position-relative p-0 me-3"><i class="bi bi-cart"></i>
+        <span class="position-absolute top-0 start-100 badge rounded-pill bg-danger" style="font-size: 0.5rem">{{numberOfProductsInCart}}</span>
+    </button>
     </div>
   </nav>

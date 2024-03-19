@@ -1,4 +1,4 @@
-<div class="card" style="min-width: 18rem;">
+<div class="card">
     <button class="fs-4 btn btn-link position-absolute top-0 end-0" (click)="addToCart()"><i
             class="bi bi-cart-plus"></i></button>
     <img src={{product.image}} class="pt-2 card-img-top w-100 img-fluid" style="height: 250px; object-fit: contain;"
@@ -9,15 +9,15 @@
     </div>
 </div>
 
-<div class="toast-container position-fixed bottom-0 end-0 p-1 text-center">
-    <ngb-toast *ngIf="showAddToCartToast" [autohide]="true" 
-    aria-atomic="true">
-    <ng-template ngbToastHeader>
-        <div class="me-auto" style="color: black">
-            <i class="bi bi-cart-plus"></i> Ajouté au Panier    
-        </div>
-    </ng-template>
-    <img src={{product.image}} class="mb-2 w-100 img-fluid" style="height: 50px; object-fit: contain;">
-    <div>{{product.title}}</div>
-</ngb-toast>
+<div class="toast-container position-fixed bottom-0 end-0 p-1 text-center" style="z-index: 9999999;">
+    <ngb-toast *ngIf="showAddToCartToast" [autohide]="true" (hidden)="showAddToCartToast = false" aria-atomic="true"
+        [delay]="2000">
+        <ng-template ngbToastHeader>
+            <div class="me-auto" style="color: black">
+                <i class="bi bi-cart-plus"></i> Ajouté au Panier
+            </div>
+        </ng-template>
+        <img src={{product.image}} class="mb-2 w-100 img-fluid" style="height: 50px; object-fit: contain;">
+        <div>{{product.title}}</div>
+    </ngb-toast>
 </div>
